@@ -6,7 +6,7 @@
  * package can be installed from a plugin market without extra bundles.
  */
 export const name = 'dsh-ddj-go'
-export const inject = ['webServer']
+export const inject = []
 
 const BACKEND = process.env.DDJ_BACKEND || 'http://127.0.0.1:19999'
 const API_PREFIX = '/ddj-go-api'
@@ -107,14 +107,19 @@ async function handleApi(req, res, url) {
   }
 }
 
+import { installNative } from './lib/native.js'
+
 export function apply(ctx) {
-  ctx.effect(
-    () =>
-      ctx.webServer.register({
-        kind: 'prefix',
-        path: API_PREFIX,
-        handler: (req, res) => handleApi(req, res, new URL(req.url ?? '/', 'http://localhost')),
-      }),
-    'ddj-go.api',
-  )
+  ctx.inject(['webServer'], (webCtx) => {
+    webCtx.effect(
+      () =>
+        webCtx.webServer.register({
+          kind: 'prefix',
+          path: API_PREFIX,
+          handler: (req, res) => handleApi(req, res, new URL(req.url ?? '/', 'http://localhost')),
+        }),
+      'ddj-go.api',
+    )
+  })
+  installNative(ctx)
 }
