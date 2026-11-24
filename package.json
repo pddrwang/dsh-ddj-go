@@ -1,6 +1,6 @@
 {
   "name": "dsh-ddj-go",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "叮咚鸡 Go：DSH Go 移动端研究工作台插件（项目仪表盘 + 工作区文件下载/WPS 分享，可经 DSH 插件市场安装）。",
   "type": "module",
   "exports": {
