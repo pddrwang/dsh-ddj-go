@@ -1,0 +1,47 @@
+{
+  "name": "dsh-ddj-go",
+  "version": "0.2.1",
+  "description": "叮咚鸡 Go：DSH Go 移动端研究工作台插件（项目仪表盘 + 工作区文件下载/WPS 分享，可经 DSH 插件市场安装）。",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "docs/*.png",
+    "src/client.js",
+    "build.mjs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "author": "pddrwang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pddrwang/dsh-ddj-go.git"
+  },
+  "homepage": "https://github.com/pddrwang/dsh-ddj-go",
+  "keywords": [
+    "dsh-plugin",
+    "dsh-bundle",
+    "dingdongji",
+    "research",
+    "mobile"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.5"
+  }
+}
