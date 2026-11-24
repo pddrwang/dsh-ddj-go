@@ -73,5 +73,5 @@ node build.mjs
 `assets/preview/` 供 App 原生图集展示（点开可保存/分享）。原生面板只读，文档下载与 WPS
 仍需切到 dsh-Go 网页版。
 
-注意：dsh-Go 原生插槽需要主机带 dsh-go 桥接（本机引擎自带；DSH Remote/部分 SSH 主机没有，
-此时仍使用网页版）。
+注意：dsh-Go 原生插槽需要主机带 dsh-go 桥接（本机引擎自带；远程主机需安装 `dsh-go-bridge`）。
+本机已把 `dsh-go-bridge@0.4.0` 装进 `dshgo` / `desktop` profile；desktop 需重启一次 DSH 生效。
