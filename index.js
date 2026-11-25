@@ -108,6 +108,7 @@ async function handleApi(req, res, url) {
 }
 
 import { installNative } from './lib/native.js'
+import { registerTools } from './lib/tools.js'
 
 export function apply(ctx) {
   ctx.inject(['webServer'], (webCtx) => {
@@ -122,4 +123,5 @@ export function apply(ctx) {
     )
   })
   installNative(ctx)
+  ctx.inject(['tools'], (toolCtx) => registerTools(toolCtx))
 }

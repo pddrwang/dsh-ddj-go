@@ -75,3 +75,16 @@ node build.mjs
 
 注意：dsh-Go 原生插槽需要主机带 dsh-go 桥接（本机引擎自带；远程主机需安装 `dsh-go-bridge`）。
 本机已把 `dsh-go-bridge@0.4.0` 装进 `dshgo` / `desktop` profile；desktop 需重启一次 DSH 生效。
+
+
+## 原生工具卡（Remote 也能显示）
+
+v0.2.4 起提供两个工具，结果会存进对话记录，dsh-Go App 用原生卡片渲染，**不需要 dsh-go bridge，
+经 DSH Remote 连接同样显示**（这是手机原生界面的主入口）：
+
+- `ddj_go_dashboard`：项目、管线进度/当前步骤、结论与引用问题；
+- `ddj_go_files`：手稿/图稿/手稿文书目录列表。
+
+在手机对话里直接说「打开叮咚鸡仪表盘」「列出手稿」即可。工具卡只读；下载/WPS 仍用网页版。
+原生面板/侧栏（`dshGo` 插槽）只在带 bridge 的主机（本机引擎、SSH）显示；DSH Remote 不显示，
+别把它当移动端主路径。
